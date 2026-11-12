@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <meta content="web_standard" name="shell-type" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind Config (custom theme) -->
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "accent-teal": "#245953",
+            "badge-highlight": "#F7E2B4",
+            "secondary-fixed": "#b7ede5",
+            "secondary-fixed-dim": "#9cd1c9",
+            "surface-dim": "#dddad3",
+            "on-background": "#1c1c18",
+            "accent-teal-soft": "#E6EFE9",
+            "inverse-on-surface": "#f4f0e9",
+            "outline-variant": "#c4c7c7",
+            "inverse-surface": "#31302c",
+            "surface-container": "#f1ede6",
+            "on-secondary": "#ffffff",
+            "border-strong": "rgba(26, 26, 26, 0.16)",
+            "primary": "#000000",
+            "surface": "#fdf9f2",
+            "tertiary": "#000000",
+            "on-secondary-fixed-variant": "#184f49",
+            "on-tertiary-fixed": "#2f1500",
+            "surface-container-high": "#ece8e1",
+            "on-primary-container": "#858383",
+            "badge-highlight-text": "#78350F",
+            "on-primary-fixed": "#1c1b1b",
+            "on-tertiary-container": "#c76c00",
+            "primary-container": "#1c1b1b",
+            "inverse-primary": "#c8c6c5",
+            "on-tertiary-fixed-variant": "#6e3900",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-highest": "#e6e2db",
+            "on-tertiary": "#ffffff",
+            "on-secondary-container": "#386b65",
+            "on-error": "#ffffff",
+            "text-primary": "#141413",
+            "surface-bright": "#fdf9f2",
+            "secondary-container": "#b4eae2",
+            "accent-emerald": "#0D9488",
+            "tertiary-fixed": "#ffdcc3",
+            "surface-card": "#FFFFFF",
+            "text-secondary": "#57534E",
+            "on-primary-fixed-variant": "#474746",
+            "tertiary-fixed-dim": "#ffb77d",
+            "surface-tint": "#5f5e5e",
+            "on-primary": "#ffffff",
+            "surface-variant": "#e6e2db",
+            "error": "#ba1a1a",
+            "on-surface": "#1c1c18",
+            "primary-fixed-dim": "#c8c6c5",
+            "error-container": "#ffdad6",
+            "primary-fixed": "#e5e2e1",
+            "on-surface-variant": "#444748",
+            "outline": "#747878",
+            "secondary": "#336761",
+            "surface-canvas": "#F4F1EA",
+            "border-subtle": "rgba(26, 26, 26, 0.08)",
+            "surface-container-low": "#f7f3ec",
+            "text-tertiary": "#8A847C",
+            "background": "#fdf9f2",
+            "surface-subtle": "#EBE6DD",
+            "on-secondary-fixed": "#00201d",
+            "tertiary-container": "#2f1500",
+            "on-error-container": "#93000a"
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          spacing: {
+            "space-3xl": "6rem",
+            "gutter": "1.5rem",
+            "margin": "3rem",
+            "space-xl": "2.5rem",
+            "space-lg": "1.5rem",
+            "gutter-sm": "1rem",
+            "margin-mobile": "1.25rem",
+            "space-2xl": "4rem",
+            "space-sm": "0.5rem",
+            "space-xs": "0.25rem",
+            "space-md": "1rem"
+          },
+          fontFamily: {
+            "body-md": ["IBM Plex Sans"],
+            "body-lg": ["IBM Plex Sans"],
+            "body-sm": ["IBM Plex Sans"],
+            "headline-md": ["Space Grotesk"],
+            "label-sm": ["IBM Plex Sans"],
+            "display-xl": ["Space Grotesk"],
+            "label-md": ["IBM Plex Sans"],
+            "headline-lg": ["Space Grotesk"],
+            "headline-sm": ["Space Grotesk"],
+            "headline-lg-mobile": ["Space Grotesk"],
+            "display-xl-mobile": ["Space Grotesk"],
+            "title-md": ["IBM Plex Sans"],
+            "code-sm": ["JetBrains Mono"]
+          },
+          fontSize: {
+            "body-md": ["15px", { lineHeight: "24px", letterSpacing: "0", fontWeight: "400" }],
+            "body-lg": ["18px", { lineHeight: "28px", letterSpacing: "-0.005em", fontWeight: "400" }],
+            "body-sm": ["13px", { lineHeight: "20px", letterSpacing: "0.005em", fontWeight: "400" }],
+            "headline-md": ["28px", { lineHeight: "36px", letterSpacing: "-0.015em", fontWeight: "500" }],
+            "label-sm": ["11px", { lineHeight: "16px", letterSpacing: "0.06em", fontWeight: "600" }],
+            "display-xl": ["56px", { lineHeight: "64px", letterSpacing: "-0.03em", fontWeight: "500" }],
+            "label-md": ["13px", { lineHeight: "18px", letterSpacing: "0.02em", fontWeight: "600" }],
+            "headline-lg": ["40px", { lineHeight: "48px", letterSpacing: "-0.025em", fontWeight: "500" }],
+            "headline-sm": ["20px", { lineHeight: "28px", letterSpacing: "-0.01em", fontWeight: "500" }],
+            "headline-lg-mobile": ["30px", { lineHeight: "38px", letterSpacing: "-0.02em", fontWeight: "500" }],
+            "display-xl-mobile": ["38px", { lineHeight: "44px", letterSpacing: "-0.02em", fontWeight: "500" }],
+            "title-md": ["18px", { lineHeight: "26px", letterSpacing: "-0.01em", fontWeight: "600" }],
+            "code-sm": ["12px", { lineHeight: "18px", letterSpacing: "0", fontWeight: "400" }]
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- CSS customizado -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- JS externo -->
+  <script src="js/script.js" defer></script>
+
+  <title>LinguaViva — Aprenda sem limites. Ensine sem fronteiras.</title>
+</head>
+
+<body class="bg-surface font-body-md text-body-md text-on-surface antialiased">
+
+  <!-- ================= HEADER ================= -->
+  <header class="fixed top-0 left-0 right-0 w-full z-50 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+    <div class="h-20 max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between gap-6">
+      <a class="flex items-center gap-3 shrink-0" data-path="inicio" href="#">
+        <div class="w-9 h-9 rounded-lg bg-primary-container flex items-center justify-center">
+          <div class="w-4 h-4 rounded-full border-2 border-surface-card flex items-center justify-center">
+            <div class="w-1.5 h-1.5 rounded-full bg-accent-emerald"></div>
+          </div>
+        </div>
+        <div class="flex flex-col">
+          <span class="font-headline-sm text-headline-sm text-text-primary tracking-tight font-medium">LinguaViva</span>
+          <span class="font-code-sm text-code-sm text-text-tertiary -mt-1 hidden sm:block">INCLUSIVE LANGUAGE</span>
+        </div>
+      </a>
+
+      <nav class="hidden xl:flex items-center gap-6" data-active-classes="text-on-surface font-semibold bg-surface-container-high rounded-full px-3 py-1.5">
+        <a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="idiomas-e-cursos" href="#">Idiomas &amp; Cursos</a>
+        <a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="metodologias" href="#">Metodologias</a>
+        <a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="para-alunos" href="#">Para Alunos</a>
+        <a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="para-professores" href="#">Para Professores</a>
+        <a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="planos" href="#">Planos</a>
+        <a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="faq" href="#">FAQ</a>
+      </nav>
+
+      <div class="flex items-center gap-4 shrink-0">
+        <span class="hidden lg:inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-badge-highlight text-badge-highlight-text font-label-sm text-label-sm">
+          <span class="w-1.5 h-1.5 rounded-full bg-accent-emerald"></span>LIBRAS • ESP • ING
+        </span>
+        <a class="hidden md:inline-flex items-center px-4 py-2 rounded-full font-label-md text-label-md text-text-primary hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="para-professores" href="#">Sou Professor</a>
+        <a class="inline-flex items-center px-5 py-2.5 rounded-full bg-primary-container text-on-primary font-label-md text-label-md hover:bg-on-background transition-all shadow-[0_4px_12px_-2px_rgba(20,20,19,0.12)]" data-path="quero-aprender" href="#">Quero Aprender</a>
+        <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0">
+          <span class="material-symbols-outlined text-on-primary text-[18px]">person</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= MAIN ================= -->
+  <main class="w-full pt-20 bg-surface">
+    <div class="flex flex-col w-full">
+
+      <!-- ===== HERO SECTION ===== -->
+      <div class="relative w-full overflow-hidden bg-surface py-12 md:py-20 lg:py-24">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[1100px] h-[580px] bg-gradient-to-b from-badge-highlight/35 via-accent-teal-soft/20 to-transparent blur-3xl pointer-events-none -z-10"></div>
+
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col items-center text-center">
+          <a class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-surface-card shadow-[0_2px_8px_rgba(20,20,19,0.06)] hover:shadow-[0_4px_14px_rgba(20,20,19,0.1)] transition-all group mb-8" href="#cursos">
+            <span class="px-2 py-0.5 rounded-full bg-badge-highlight text-badge-highlight-text font-label-sm text-label-sm uppercase tracking-wide">NOVO</span>
+            <span class="font-label-md text-label-md text-text-primary">Plataforma 100% Inclusiva &amp; Acessível • Libras Oficial</span>
+            <span class="material-symbols-outlined text-text-tertiary group-hover:translate-x-0.5 text-[16px] transition-transform">arrow_forward</span>
+          </a>
+
+          <h1 class="font-display-xl text-display-xl text-text-primary max-w-4xl tracking-tight leading-[1.08] mb-6">
+            Aprenda sem limites.<br class="hidden sm:inline" />
+            <span class="text-on-surface">Ensine sem fronteiras.</span>
+          </h1>
+
+          <p class="font-body-lg text-body-lg text-text-secondary max-w-2xl mx-auto mb-10 leading-relaxed">
+            Libras, Espanhol e Inglês nas modalidades EAD, Integral ou Híbrido. Uma comunidade bilíngue e acessível para quem quer fluência real e para educadores que transformam futuros.
+          </p>
+
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-5">
+            <a class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-primary-container text-on-primary font-label-md text-label-md hover:bg-on-background transition-all shadow-[0_8px_20px_-4px_rgba(20,20,19,0.22)]" href="#cursos">
+              <span>Explorar Cursos</span>
+              <span class="material-symbols-outlined text-[18px]">north_east</span>
+            </a>
+            <a class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-surface-card text-text-primary font-label-md text-label-md hover:bg-surface-container transition-all shadow-[0_2px_8px_rgba(20,20,19,0.06)]" href="#professores">
+              <span class="material-symbols-outlined text-accent-teal text-[18px]">school</span>
+              <span>Quero Ensinar</span>
+            </a>
+          </div>
+
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container-high/60 text-text-secondary font-label-sm text-label-sm mb-14">
+            <span class="w-2 h-2 rounded-full bg-accent-emerald animate-pulse"></span>
+            <span>Não sabe por onde começar?</span>
+            <a class="text-accent-teal font-medium hover:underline inline-flex items-center gap-0.5" href="#nivelamento">
+              Faça o Teste de Nivelamento em 2 min
+              <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+            </a>
+          </div>
+
+          <div class="w-full max-w-5xl flex flex-col items-center">
+            <div class="inline-flex p-1.5 rounded-full bg-surface-subtle shadow-[inset_0_1px_3px_rgba(0,0,0,0.08)] mb-6">
+              <button class="hero-tab-btn active-hero-tab flex items-center gap-3 px-6 py-2.5 rounded-full font-label-md text-label-md transition-all" id="tab-libras" onclick="switchHeroMode('libras')">
+                <span class="w-7 h-7 rounded-lg bg-surface-card shadow-sm flex items-center justify-center text-text-primary">
+                  <span class="material-symbols-outlined text-[18px] text-accent-teal">sign_language</span>
+                </span>
+                <div class="text-left leading-tight">
+                  <span class="block text-[10px] uppercase font-code-sm text-text-tertiary">VISUAL • ESPACIAL</span>
+                  <span class="font-headline-sm text-[14px] text-text-primary">Libras Interativa</span>
+                </div>
+              </button>
+              <button class="hero-tab-btn flex items-center gap-3 px-6 py-2.5 rounded-full font-label-md text-label-md text-text-secondary transition-all" id="tab-oral" onclick="switchHeroMode('oral')">
+                <span class="w-7 h-7 rounded-lg bg-surface-card shadow-sm flex items-center justify-center text-text-primary">
+                  <span class="material-symbols-outlined text-[18px] text-accent-emerald">record_voice_over</span>
+                </span>
+                <div class="text-left leading-tight">
+                  <span class="block text-[10px] uppercase font-code-sm text-text-tertiary">ESP • ING</span>
+                  <span class="font-headline-sm text-[14px] text-text-primary">Imersão Oral</span>
+                </div>
+              </button>
+            </div>
+
+            <div class="w-full rounded-2xl bg-surface-card p-4 sm:p-6 lg:p-8 shadow-[0_24px_48px_-12px_rgba(20,20,19,0.08),0_1px_4px_rgba(20,20,19,0.03)] text-left">
+              <div class="flex flex-wrap items-center justify-between pb-5 mb-6 shadow-[0_1px_0_rgba(26,26,26,0.06)] gap-4">
+                <div class="flex items-center gap-3">
+                  <div class="flex gap-1.5">
+                    <span class="w-3 h-3 rounded-full bg-surface-container-highest"></span>
+                    <span class="w-3 h-3 rounded-full bg-surface-container-highest"></span>
+                    <span class="w-3 h-3 rounded-full bg-surface-container-highest"></span>
+                  </div>
+                  <span class="font-code-sm text-code-sm text-text-tertiary">LINGUAVIVA // LIVE CLASS STUDIO v2.4</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-accent-teal-soft font-label-sm text-label-sm text-accent-teal">
+                    <span class="w-2 h-2 rounded-full bg-accent-teal animate-ping"></span>
+                    Sessão Síncrona Ativa
+                  </span>
+                  <span class="font-code-sm text-code-sm text-text-secondary px-3 py-1 rounded-full bg-surface-container">WCAG 2.2 AAA</span>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center" id="hero-display-container">
+                <div class="lg:col-span-7 flex flex-col gap-3">
+                  <div class="relative w-full aspect-video rounded-xl overflow-hidden bg-surface-subtle shadow-inner flex items-center justify-center">
+                    <div class="bg-cover bg-center w-full h-full relative" data-alt="A high definition bright classroom scenario where a skilled bilingual instructor communicates seamlessly in Brazilian Sign Language Libras and Spanish, warm soft daylight studio atmosphere, editorial academic style." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCJtY5qHGjP5mMgV3-4vQJzfYycJe4uulifhy-naIRJi4zJXmnmtNQWPReYpUc0NpJJbp2U0uGEC3d7CSyHyMOFWFpQntVUwg8U3-5mJqeh9HIV2mZ52-HdhfqCDNAF2afPDvkyh9_LC6rm5S5IE-0K5Ei-s4zx5VcBUdNrVra2xlPyQHXufY0OJCM4Wb4Z20q47pePCM6YLE6wXPB3PK9fR5c61bg3vewKo9_jgFg')">
+                      <div class="absolute bottom-3 left-3 right-3 p-3.5 rounded-lg bg-surface/90 backdrop-blur-md shadow-md flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                          <div class="w-8 h-8 rounded-full bg-accent-teal flex items-center justify-center text-on-primary">
+                            <span class="material-symbols-outlined text-[18px]">interpreter_mode</span>
+                          </div>
+                          <div>
+                            <p class="font-label-md text-label-md text-text-primary" id="caption-speaker">Prof. Mariana Alencar • Especialista em Libras</p>
+                            <p class="font-body-sm text-body-sm text-text-secondary" id="caption-text">"Sinalização expressiva: parâmetros gramaticais e ponto de articulação."</p>
+                          </div>
+                        </div>
+                        <span class="material-symbols-outlined text-accent-teal text-[20px]">graphic_eq</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="lg:col-span-5 flex flex-col gap-4">
+                  <div class="p-4 rounded-xl bg-surface-container-low flex flex-col gap-2">
+                    <div class="flex items-center justify-between">
+                      <span class="font-code-sm text-code-sm text-text-tertiary">PROGRESSO DIDÁTICO</span>
+                      <span class="font-code-sm text-code-sm text-accent-teal font-medium">84% CONCLUÍDO</span>
+                    </div>
+                    <div class="w-full bg-surface-container-highest rounded-full h-2 overflow-hidden">
+                      <div class="bg-accent-teal h-2 rounded-full w-[84%] transition-all"></div>
+                    </div>
+                    <p class="font-body-sm text-body-sm text-text-secondary mt-1">Domínio prático de 48 estruturas comunicativas avançadas.</p>
+                  </div>
+
+                  <div class="space-y-2.5">
+                    <div class="p-3.5 rounded-xl bg-surface-card shadow-[0_2px_6px_rgba(0,0,0,0.03)] flex items-center justify-between">
+                      <div class="flex items-center gap-3">
+                        <span class="w-6 h-6 rounded-full bg-accent-teal/10 text-accent-teal flex items-center justify-center font-code-sm text-[11px] font-semibold">01</span>
+                        <span class="font-label-md text-label-md text-text-primary">Fonologia e Datilologia Visual</span>
+                      </div>
+                      <span class="material-symbols-outlined text-accent-emerald text-[20px]">check_circle</span>
+                    </div>
+                    <div class="p-3.5 rounded-xl bg-surface-card shadow-[0_2px_6px_rgba(0,0,0,0.03)] flex items-center justify-between">
+                      <div class="flex items-center gap-3">
+                        <span class="w-6 h-6 rounded-full bg-accent-teal/10 text-accent-teal flex items-center justify-center font-code-sm text-[11px] font-semibold">02</span>
+                        <span class="font-label-md text-label-md text-text-primary">Expressões Não-Manuais (ENM)</span>
+                      </div>
+                      <span class="material-symbols-outlined text-accent-emerald text-[20px]">check_circle</span>
+                    </div>
+                    <div class="p-3.5 rounded-xl bg-surface-container-high flex items-center justify-between">
+                      <div class="flex items-center gap-3">
+                        <span class="w-6 h-6 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-code-sm text-[11px]">03</span>
+                        <span class="font-label-md text-label-md text-text-primary">Fluência Conversacional em Pares</span>
+                      </div>
+                      <span class="font-code-sm text-code-sm text-badge-highlight-text px-2 py-0.5 rounded bg-badge-highlight">EM ANDAMENTO</span>
+                    </div>
+                  </div>
+
+                  <div class="p-3 rounded-lg bg-surface-container-low flex items-center justify-between text-text-secondary">
+                    <div class="flex items-center gap-2">
+                      <span class="material-symbols-outlined text-[18px] text-accent-teal">closed_caption</span>
+                      <span class="font-label-sm text-label-sm">Legendas Dinâmicas em Tempo Real</span>
+                    </div>
+                    <span class="font-code-sm text-code-sm text-text-tertiary">PT • EN • ES</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="w-full max-w-4xl grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 mt-16 pt-12 shadow-[0_-1px_0_rgba(26,26,26,0.06)]">
+            <div class="flex flex-col items-center">
+              <span class="font-headline-lg text-headline-lg text-text-primary font-bold">15.000+</span>
+              <span class="font-body-sm text-body-sm text-text-secondary mt-1">Alunos Formados &amp; Certificados</span>
+            </div>
+            <div class="flex flex-col items-center">
+              <span class="font-headline-lg text-headline-lg text-text-primary font-bold">480+</span>
+              <span class="font-body-sm text-body-sm text-text-secondary mt-1">Professores Nativos &amp; Especialistas</span>
+            </div>
+            <div class="flex flex-col items-center">
+              <span class="font-headline-lg text-headline-lg text-text-primary font-bold">98.6%</span>
+              <span class="font-body-sm text-body-sm text-text-secondary mt-1">Índice de Aprovação e Satisfação</span>
+            </div>
+          </div>
+        </div>
+      </div>

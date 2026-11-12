@@ -1,0 +1,118 @@
+/* ============================================================
+   LINGUAVIVA — CUSTOM CSS
+   ------------------------------------------------------------
+   Observação: este projeto usa Tailwind CSS via CDN.
+   A maior parte dos estilos está nas classes utilitárias
+   do HTML. Este arquivo contém APENAS os estilos que
+   NÃO são cobertos pelo Tailwind.
+   ============================================================ */
+
+
+/* ============================================================
+   1. RESET E BASE
+   ============================================================ */
+@layer base {
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    overscroll-behavior: none;
+  }
+
+  main > :first-child {
+    margin-top: 0 !important;
+  }
+
+  main > :last-child {
+    margin-bottom: 0 !important;
+  }
+}
+
+
+/* ============================================================
+   2. SCROLLBAR (oculta em todos os navegadores WebKit)
+   ============================================================ */
+::-webkit-scrollbar {
+  display: none;
+}
+
+
+/* ============================================================
+   3. ESTADOS DE ABAS (Hero Switcher e Journey Switcher)
+   ------------------------------------------------------------
+   As classes .active-hero-tab e .active-journey-tab são
+   aplicadas via JavaScript. Elas já recebem estilos do
+   Tailwind (bg-surface-card, shadow-sm, etc.) via
+   classList.add() no script.js.
+   Deixei este bloco como reforço visual opcional.
+   ============================================================ */
+.hero-tab-btn,
+.journey-tab-btn {
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  outline: none;
+}
+
+.hero-tab-btn:focus-visible,
+.journey-tab-btn:focus-visible {
+  outline: 2px solid #0D9488; /* accent-emerald */
+  outline-offset: 2px;
+}
+
+
+/* ============================================================
+   4. MODAL (escondido por padrão)
+   ------------------------------------------------------------
+   O modal usa a classe .hidden do Tailwind para sumir.
+   Este bloco garante que, mesmo se o Tailwind falhar em
+   carregar, o modal continue invisível.
+   ============================================================ */
+#test-modal.hidden {
+  display: none !important;
+}
+
+
+/* ============================================================
+   5. ACESSIBILIDADE — FOCO VISÍVEL
+   ============================================================ */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 2px solid #0D9488;
+  outline-offset: 2px;
+}
+
+
+/* ============================================================
+   6. SELEÇÃO DE TEXTO (cor da marca)
+   ============================================================ */
+::selection {
+  background-color: #b4eae2; /* secondary-container */
+  color: #141413;            /* text-primary */
+}
+
+
+/* ============================================================
+   7. SMOOTH SCROLL (para os links internos #cursos, #planos, etc.)
+   ============================================================ */
+html {
+  scroll-behavior: smooth;
+}
+
+
+/* ============================================================
+   8. MATERIAL SYMBOLS — ajuste fino opcional
+   ============================================================ */
+.material-symbols-outlined {
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24;
+  vertical-align: middle;
+}
